@@ -1,0 +1,29 @@
+Název týmu: 
+    xnovak3l
+
+Jména řešitelů:
+    Novák Petr, xnovak3l
+    Hýža Pavel, xhyzapa00
+    Dufek Šimon, xdufeks00
+
+Název e-shopu:
+    Impact guns
+
+URL:
+    https://www.impactguns.com/
+
+Významy sloupců:
+    url
+    name
+    price
+    SKU
+    Manufacturer Number
+    Caliber
+    Model 
+    Rounds 
+    Unit of Measure
+    Classification
+
+robots.txt:
+    Crawl-delay: 10
+    Request jednou za 10 sekund
