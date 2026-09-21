@@ -1,11 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 import time
+import argparse
 
 import sys
 
 headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+    "User-Agent": "my_scraper/1.0"
 }
 
 TARGET_PARAMS = [
@@ -46,8 +47,18 @@ def get_parameters(url):
     return [url, name, price] + extracted_values
 
 def main():
+    # získání argumentu pro testovací režim
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-t', '--test', action='store_true', help='Aktivuje testovací režim, který zpracuje pouze prvních 10 URL.')
+    args = parser.parse_args()
+
+    # načtení URL adres z stdin
     urls = sys.stdin.read().strip().splitlines()
 
+    if args.test:
+        urls = urls[:10]
+
+    # zpracování každé URL a získání parametrů
     for i, url in enumerate(urls, 1):
         result = get_parameters(url)
         if result is not None:
@@ -55,6 +66,7 @@ def main():
 
         #print(f"\nZpracováno URL: {i}", file=sys.stderr)
 
+        # Dodržování pravidla Crawl-delay z robots.txt (10 vteřin mezi požadavky)
         time.sleep(10)
 
 if __name__ == "__main__":
