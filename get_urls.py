@@ -40,10 +40,6 @@ while len(product_urls) < 150:
                 product_urls.add(href)
                     
         page += 1
-        
-        if len(product_urls) < 150:
-            #print("Čekám 10 vteřin podle pravidla Crawl-delay z robots.txt...", file=sys.stderr)
-            time.sleep(10)
             
     except Exception as e:
         print(f"Nastala chyba: {e}", file=sys.stderr)

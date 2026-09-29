@@ -66,8 +66,5 @@ def main():
 
         #print(f"\nZpracováno URL: {i}", file=sys.stderr)
 
-        # Dodržování pravidla Crawl-delay z robots.txt (10 vteřin mezi požadavky)
-        time.sleep(10)
-
 if __name__ == "__main__":
     main()

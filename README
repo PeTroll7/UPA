@@ -24,7 +24,3 @@ Významy sloupců:
     Rounds 
     Unit of Measure
     Classification
-
-robots.txt:
-    Crawl-delay: 10
-    Request jednou za 10 sekund
